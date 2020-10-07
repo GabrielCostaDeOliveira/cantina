@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 
 public class PalcoDeVendas extends BorderPane {
-    sudo();
+
     FlowPane flowPane;
     GridPane gridPane;
 
@@ -22,6 +22,7 @@ public class PalcoDeVendas extends BorderPane {
 
     public PalcoDeVendas(){
 
+    
         nomeDaPessoaTextField = new TextField();
         nomeDaPessoaTextField.setEditable(false); 
         
@@ -34,7 +35,17 @@ public class PalcoDeVendas extends BorderPane {
         
     
     }
-    private class CaixaDoPedido extends HBox{
+   
+   
+   
+   
+   
+   
+   
+   
+    private class CaixaDoPedido {
+
+        HBox hbox;
         Label nomeDoItem;
         Integer quantidadeDeItem;
         Button acrenstarButton;
@@ -42,21 +53,18 @@ public class PalcoDeVendas extends BorderPane {
 
         CaixaDoPedido(String nomeDoItem){
         
-            PalcoDeVendas.CaixaDoPedido.this.nomeDoItem        = new Label(nomeDoItem);
-            PalcoDeVendas.CaixaDoPedido.this.quantidadeDeItem  = 0 ;
-            PalcoDeVendas.CaixaDoPedido.this.acrenstarButton   = new Button("+");
+            PalcoDeVendas.CaixaDoPedido.this.nomeDoItem              = new Label(nomeDoItem);
+            PalcoDeVendas.CaixaDoPedido.this.quantidadeDeItem   = 0 ;
+            PalcoDeVendas.CaixaDoPedido.this.acrenstarButton        = new Button("+");
             PalcoDeVendas.CaixaDoPedido.this.decrementarButton = new Button("-");
             
-            sudo(10,PalcoDeVendas.CaixaDoPedido.this.nomeDoItem, PalcoDeVendas.CaixaDoPedido.this.quantidadeDeItem,PalcoDeVendas.CaixaDoPedido.this.acrenstarButton, PalcoDeVendas.CaixaDoPedido.this.decrementarButton = new Button("-"));
-
-
-
-
+            PalcoDeVendas.CaixaDoPedido.this.hbox   =  new HBox(20,PalcoDeVendas.CaixaDoPedido.this.nomeDoItem  ,   new Label( Integer.toString(quantidadeDeItem) ),   acrenstarButton ,   decrementarButton); 
+            
         }
         
+     public HBox getHbox() {
+         return hbox;
+     }
 
-            
     }
-    
-    
 }
